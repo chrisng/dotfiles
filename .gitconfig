@@ -21,17 +21,17 @@
 	# Credit an author on the latest commit
 	credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
 	# Interactive rebase with the given number of latest commits
-    reb = "!r() { git rebase -i HEAD~$1; }; r"
-    br = "branch"
-    co = "checout"
-    st = "status"
-    ci = "commit"
-    grep = grep -Ii
-    gr = grep -Ii
-    la = "!git config -l | grep alias | cut -c 7-"
-    sl = stash list
-    sa = stash apply
-    ss = stash save
+	reb = "!r() { git rebase -i HEAD~$1; }; r"
+	br = "branch"
+	co = "checout"
+	st = "status"
+	ci = "commit"
+	grep = grep -Ii
+	gr = grep -Ii
+	la = "!git config -l | grep alias | cut -c 7-"
+	sl = stash list
+	sa = stash apply
+	ss = stash save
 
 [apply]
 	# Detect whitespace errors when applying a patch
@@ -88,3 +88,6 @@
 
 [push]
 	default = matching
+[user]
+	email = chaoselixir@gmail.com
+	name = Chris Ng
