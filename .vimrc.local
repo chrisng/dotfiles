@@ -1,0 +1,14 @@
+UnBundle 'php-namespace'
+UnBundle 'sbt'
+UnBundle 'scala'
+
+" Syntax highlighting for https://github.com/vadv/vim-chef
+autocmd FileType ruby,eruby set filetype=ruby.eruby.chef
+
+" setup prefered tab spacing
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
+autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
+
+
