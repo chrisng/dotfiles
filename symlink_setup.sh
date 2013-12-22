@@ -24,7 +24,7 @@ function link {
 
 
 for FILE in `ls -1d .??* |grep -v "^.git$"` ; do
-  if [[ -f $FILE ]] || [[ -d $FILE ]]; then
+  if [[ -f ~/$FILE ]] || [[ -d ~/$FILE ]]; then
     read -p "File $FILE in your home directory: Overwrite? Backup? Skip? Exit? (o/b/s/e) " -n 1
     echo 
     if [[ $REPLY =~ ^[Oo]$ ]]; then
