@@ -47,6 +47,9 @@ install tmux
 install ngrep
 install nmap
 install namebench
+install meld
+install hub
+
 
 tap homebrew/versions
 #install lua52
