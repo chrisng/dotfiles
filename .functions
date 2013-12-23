@@ -354,3 +354,12 @@ fi
 #Zsh arrays are numbered from 1, not from 0 like in bash and ksh, so ${files[0]} must be written $files[1].
 #Alternatively, tell zsh to behave in a way that's more compatible with ksh and bash: put emulate -L ksh at the beginning of the function.
 #}
+#
+if [ $(uname -s) == "Darwin" ] ; then
+  function showhidden {
+    defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder
+  }
+  function hidehidden {
+    defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder
+  }
+fi
