@@ -25,7 +25,7 @@
 	br = "branch"
 	co = "checkout"
 	st = "status"
-	ci = "commit"
+	ci = "commit -m"
 	grep = grep -Ii
 	gr = grep -Ii
 	la = "!git config -l | grep alias | cut -c 7-"
