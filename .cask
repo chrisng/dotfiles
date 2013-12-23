@@ -32,3 +32,5 @@ installcask integrity
 installcask skype
 installcask crashplan
 installcask mou
+installcask xquartz
+

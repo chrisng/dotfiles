@@ -362,4 +362,14 @@ if [ $(uname -s) == "Darwin" ] ; then
   function hidehidden {
     defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder
   }
+# set an alternative mtr
+  function mtr {
+    DYLD_LIBRARY_PATH='..'         # set DYLD_* for my normal programs
+    local BACK=$DYLD_LIBRARY_PATH  # back up the DYLD_* variables
+    unset DYLD_LIBRARY_PATH        # unset DYLD_*
+    /usr/local/sbin/mtr "$@"       # calling sudo
+    export DYLD_LIBRARY_PATH=$BACK # restore DYLD_* after sudo finished
+  }
 fi
+
+

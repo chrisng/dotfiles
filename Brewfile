@@ -49,6 +49,7 @@ install nmap
 install namebench
 install meld
 install hub
+install mtr
 
 
 tap homebrew/versions
