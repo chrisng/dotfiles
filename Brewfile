@@ -51,7 +51,7 @@ install meld
 install hub
 install mtr
 install heroku-toolbelt
-
+install postgresql
 
 tap homebrew/versions
 #install lua52

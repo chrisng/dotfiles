@@ -33,4 +33,4 @@ installcask skype
 installcask crashplan
 installcask mou
 installcask xquartz
-
+installcask pgadmin3
