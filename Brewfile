@@ -50,6 +50,7 @@ install namebench
 install meld
 install hub
 install mtr
+install heroku-toolbelt
 
 
 tap homebrew/versions
