@@ -1,1 +1,2 @@
 Bundle 't9md/vim-chef'
+Bundle 'tpope/vim-vividchalk'
