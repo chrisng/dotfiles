@@ -88,3 +88,6 @@
 
 [push]
 	default = simple
+[user]
+	name = Chris Ng
+	email = chaoselixir@gmail.com
