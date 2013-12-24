@@ -87,7 +87,4 @@
 	insteadOf = "gist:"
 
 [push]
-	default = matching
-[user]
-	email = chaoselixir@gmail.com
-	name = Chris Ng
+	default = simple
