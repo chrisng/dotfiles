@@ -5,7 +5,7 @@
 # Script used to symlink dotfiles instead of copy
 #
 # TODO:
-#  Support copying if there is a dir
+#  Support copying if there is a dir & subdir (e.g. .vim/after)
 #  example: 
 #     if [ -d $FILE ] ; then 
 #     for FILES in $FILE ; do
