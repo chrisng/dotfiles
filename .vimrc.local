@@ -2,6 +2,12 @@ UnBundle 'php-namespace'
 UnBundle 'sbt'
 UnBundle 'scala'
 
+" colorscheme wombat
+" colorscheme jelleybeans
+colorscheme hemisu
+" colorscheme peaksea
+" colorscheme codeschool
+
 " Syntax highlighting for https://github.com/vadv/vim-chef
 autocmd FileType ruby,eruby set filetype=ruby.eruby.chef
 
@@ -11,4 +17,6 @@ set tabstop=2
 set softtabstop=2
 autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
 
+" Set ack as the new grep
+set grepprg=ag
 
