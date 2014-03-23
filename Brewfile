@@ -52,6 +52,9 @@ install hub
 install mtr
 install heroku-toolbelt
 install postgresql
+install gnupg2
+install go
+install iftop
 
 tap homebrew/versions
 #install lua52

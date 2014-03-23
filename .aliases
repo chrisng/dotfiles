@@ -109,6 +109,7 @@ alias mergepdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Re
 
 # Disable Spotlight
 alias spotoff="sudo mdutil -a -i off"
+
 # Enable Spotlight
 alias spoton="sudo mdutil -a -i on"
 
@@ -155,17 +156,34 @@ alias Grep='grep'
 alias grpe='grep'
 #alias burp='java -jar /home/cng/bin/burpsuite_free_v1.5.jar'
 alias gitlog='git log --all --pretty=format:"%h %cd %s (%an)" --since="7 days ago"'
-alias vi='vim'
 alias isodate='date +"%Y-%m-%d %H:%M:%S"'
 
-# print logged in users
-alias user='finger -s'
-#
+if [ $(uname -s) == "Darwin" ]; then
+  command -v mvim > /dev/null 2>&1
+  if [ $? == 0 ] ; then
+    alias vi='mvim'
+  fi
+else
+    alias vi=vim
+fi
+
+alias vdiff='vimdiff -d '
 # ssh with full X support
 alias sshx='ssh -XY'
-#
+
 # edit files in-place with perl expressions (with implicit print)
 alias pep='perl -wpi~ -e'   
-#
+
 # edit files in-place with perl expressions (without implicit print)
 alias pen='perl -wni~ -e'
+
+# Install and clean VIM plugins via vundle
+alias vimbundle='vim +BundleInstall +qall ; vim +BundleClean +qall'
+
+# Default ag behavior
+alias ag='ag -Uut'
+
+alias ln='ls -v'
+
+alias cdl3='cd ~/projects/l3/;git config --global user.email chrisn@loyal3.com'
+alias cdchaos='cd ~/projects/chaoselixir/;git config --global user.email chaoselixir@gmail.com'

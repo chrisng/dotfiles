@@ -31,7 +31,8 @@
 	la = "!git config -l | grep alias | cut -c 7-"
 	sl = stash list
 	sa = stash apply
-	ss = stash save
+    ss = stash save
+    user = config user.email
 
 [apply]
 	# Detect whitespace errors when applying a patch
@@ -91,3 +92,9 @@
 [user]
 	name = Chris Ng
 	email = chaoselixir@gmail.com
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

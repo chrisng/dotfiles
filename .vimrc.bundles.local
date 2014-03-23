@@ -1,2 +1,5 @@
 Bundle 't9md/vim-chef'
-Bundle 'tpope/vim-vividchalk'
+Bundle 'Lokaltog/vim-distinguished'
+Bundle 'noahfrederick/vim-hemisu'
+Bundle 'rking/ag.vim'
+Bundle 'jwhitley/vim-matchit'

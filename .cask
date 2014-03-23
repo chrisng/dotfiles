@@ -35,3 +35,4 @@ installcask mou
 installcask xquartz
 installcask pgadmin3
 installcask visualvm
+installcask xpra

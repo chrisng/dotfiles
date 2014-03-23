@@ -1,10 +1,11 @@
 UnBundle 'php-namespace'
 UnBundle 'sbt'
 UnBundle 'scala'
+Bundle 'chase/vim-ansible-yaml'
 
+" colorscheme hemisu
 " colorscheme wombat
 " colorscheme jelleybeans
-colorscheme hemisu
 " colorscheme peaksea
 " colorscheme codeschool
 

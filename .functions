@@ -71,7 +71,7 @@ function fs() {
 # Use Git’s colored diff when available
 hash git &>/dev/null
 if [ $? -eq 0 ]; then
-	function diff() {
+	function gdiff() {
 		git diff --no-index --color-words "$@"
 	}
 fi
@@ -264,7 +264,7 @@ function m() {
 
 # `s` with no arguments opens the current directory in Sublime Text, otherwise
 # opens the given location
-function s() {
+function subl() {
 	if [ $# -eq 0 ]; then
 		subl .
 	else
@@ -372,4 +372,7 @@ if [ $(uname -s) == "Darwin" ] ; then
   }
 fi
 
-
+# xcopy - copy to X11 clipboard
+function xcopy {
+  xclip -d :0 -i -sel clip
+}

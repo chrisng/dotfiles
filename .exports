@@ -29,3 +29,20 @@ if [ $(uname -s) == "Darwin" ] ; then
   export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
 fi
 
+
+#This formula is keg-only, so it was not symlinked into /usr/local.
+##Mac OS X already provides this software and installing another version in
+##parallel can cause all kinds of trouble.
+##OS X provides an older sqlite3.
+##Generally there are no consequences of this for you. If you build your
+##own software and it requires this formula, you'll need to add to your
+##build variables:
+##
+##    LDFLAGS:  -L/usr/local/opt/sqlite/lib
+##    CPPFLAGS: -I/usr/local/opt/sqlite/include
+
+export LDFLAGS='-L/usr/local/opt/sqlite/lib'
+export CPPFLAGS='-I/usr/local/opt/sqlite/include'
+
+export GOPATH=$HOME/gocode
+
