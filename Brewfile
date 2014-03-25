@@ -53,8 +53,9 @@ install mtr
 install heroku-toolbelt
 install postgresql
 install gnupg2
-install go
 install iftop
+install python32
+install ssh-copy-id
 
 tap homebrew/versions
 #install lua52

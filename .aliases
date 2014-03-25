@@ -156,6 +156,7 @@ alias Grep='grep'
 alias grpe='grep'
 #alias burp='java -jar /home/cng/bin/burpsuite_free_v1.5.jar'
 alias gitlog='git log --all --pretty=format:"%h %cd %s (%an)" --since="7 days ago"'
+#command -v mvim > /dev/null && alias vi='mvim' || alias vi='vim'
 alias isodate='date +"%Y-%m-%d %H:%M:%S"'
 
 if [ $(uname -s) == "Darwin" ]; then
