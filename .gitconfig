@@ -33,6 +33,8 @@
 	sa = stash apply
     ss = stash save
     user = config user.email
+    purr = pull --rebase
+    
 
 [apply]
 	# Detect whitespace errors when applying a patch
