@@ -54,8 +54,10 @@ install heroku-toolbelt
 install postgresql
 install gnupg2
 install iftop
+<<<<<<< HEAD
 install python32
 install ssh-copy-id
+install vagrant-completion
 
 tap homebrew/versions
 #install lua52
