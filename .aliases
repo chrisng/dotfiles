@@ -184,7 +184,7 @@ alias vimbundle='vim +BundleInstall +qall ; vim +BundleClean +qall'
 # Default ag behavior
 alias ag='ag -Uut'
 
-alias ln='ls -v'
+alias ln='ln -v'
 
 alias cdl3='cd ~/projects/l3/;git config --global user.email chrisn@loyal3.com'
 alias cdchaos='cd ~/projects/chaoselixir/;git config --global user.email chaoselixir@gmail.com'
