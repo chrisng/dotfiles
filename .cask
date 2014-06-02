@@ -38,3 +38,4 @@ installcask visualvm
 installcask xpra
 installcask vagrant
 installcask charles
+installcask licecap
