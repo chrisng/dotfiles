@@ -57,6 +57,7 @@ install iftop
 install python32
 install ssh-copy-id
 install vagrant-completion
+install ansible
 
 tap homebrew/versions
 #install lua52

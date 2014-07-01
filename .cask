@@ -39,3 +39,5 @@ installcask xpra
 installcask vagrant
 installcask charles
 installcask licecap
+installcask jing
+installcask disk-inventory-x
