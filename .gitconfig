@@ -34,7 +34,9 @@
     ss = stash save
     user = config user.email
     purr = pull --rebase
-    
+    who = !sh -c 'echo \"`git config --global user.name` <`git config --global user.email`>\"'
+    pair = !sh -c 'git config --global user.name $0+$1 && git config --global user.email my_team+$0+$1@chaoselixir.com'
+    old-merged-branches = "!for k in $(git branch -r --merged master | grep -v '\\->' | sed s/^..//);do echo $(git log -1 --pretty=format:\"%ci %cr\" \"$k\")\\\\t\"$k\";done | sort"
 
 [apply]
 	# Detect whitespace errors when applying a patch
