@@ -51,6 +51,7 @@ install meld
 install hub
 install mtr
 install heroku-toolbelt
+install ossp-uuid
 install postgresql
 install gnupg2
 install iftop
@@ -58,6 +59,8 @@ install python32
 install ssh-copy-id
 install vagrant-completion
 install ansible
+install boot2docker
+install sshrc
 
 tap homebrew/versions
 #install lua52
