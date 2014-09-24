@@ -37,6 +37,7 @@
     who = !sh -c 'echo \"`git config --global user.name` <`git config --global user.email`>\"'
     pair = !sh -c 'git config --global user.name $0+$1 && git config --global user.email my_team+$0+$1@chaoselixir.com'
     old-merged-branches = "!for k in $(git branch -r --merged master | grep -v '\\->' | sed s/^..//);do echo $(git log -1 --pretty=format:\"%ci %cr\" \"$k\")\\\\t\"$k\";done | sort"
+    pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
 
 [apply]
 	# Detect whitespace errors when applying a patch
@@ -94,8 +95,6 @@
 [push]
 	default = simple
 [user]
-	name = Chris Ng
-	email = chaoselixir@gmail.com
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
