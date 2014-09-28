@@ -39,6 +39,8 @@ if [ -f /usr/share/git-core/git-completion.bash ] ; then
   GIT_COMPLETION=/usr/share/git-core/git-completion.bash
 elif [ -f ~/.git-completion.sh ] ; then
   GIT_COMPLETION=~/.git-completion.sh
+elif [ -f ~/.git-completion.bash ] ; then
+  GIT_COMPLETION=~/.git-completion.bash
 fi
 source $GIT_COMPLETION
 
