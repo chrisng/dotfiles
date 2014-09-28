@@ -19,7 +19,7 @@ DATE=$(date +"%Y-%m-%d_%H:%M:%S")
 
 function link {
   FILE=$1
-  ln -s `pwd`/$FILE ~/${FILE} 
+  ln -sf `pwd`/$FILE ~/${FILE}
 }
 
 
