@@ -61,6 +61,7 @@ install vagrant-completion
 install ansible
 install boot2docker
 install sshrc
+install pv
 
 tap homebrew/versions
 #install lua52
