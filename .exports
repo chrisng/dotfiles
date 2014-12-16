@@ -51,3 +51,4 @@ export CPPFLAGS='-I/usr/local/opt/sqlite/include'
 
 export GOROOT=$HOME/projects/golang
 
+export DOCKER_HOST=tcp://192.168.59.103:2375
