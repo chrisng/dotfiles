@@ -94,7 +94,6 @@
 
 [push]
 	default = simple
-[user]
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -104,3 +103,5 @@
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
+[include]
+    path = ~/.gitconfig.local
