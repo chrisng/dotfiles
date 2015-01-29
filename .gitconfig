@@ -10,6 +10,7 @@
     p = !"git pull; git submodule foreach git pull origin master"
     # Clone a repository including all submodules
     c = clone --recursive
+    clone = clone --recursive
     # Commit all changes
     cam = !git add -A && git commit -avm
     # Switch to a branch, creating it if necessary
