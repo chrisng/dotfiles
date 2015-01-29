@@ -41,6 +41,8 @@ elif [ -f ~/.git-completion.sh ] ; then
   GIT_COMPLETION=~/.git-completion.sh
 elif [ -f ~/.git-completion.bash ] ; then
   GIT_COMPLETION=~/.git-completion.bash
+elif [ -f `brew --prefix`/etc/bash_completion ]; then
+    GIT_COMPLETION=`brew --prefix`/etc/bash_completion
 fi
 source $GIT_COMPLETION
 
