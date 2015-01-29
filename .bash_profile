@@ -72,3 +72,6 @@ if [ -n $BASH_VER ] ; then
   done
 fi
 
+if [ -f /usr/local/etc/bash_completion.d/password-store ] ; then
+   source /usr/local/etc/bash_completion.d/password-store
+fi
