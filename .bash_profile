@@ -75,3 +75,10 @@ fi
 if [ -f /usr/local/etc/bash_completion.d/password-store ] ; then
    source /usr/local/etc/bash_completion.d/password-store
 fi
+
+if [ -f /usr/local/bin/aws_completer ]; then
+  complete -C '/usr/local/bin/aws_completer' aws
+fi
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
