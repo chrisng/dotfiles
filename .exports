@@ -52,3 +52,18 @@ export CPPFLAGS='-I/usr/local/opt/sqlite/include'
 export GOROOT=$HOME/projects/golang
 
 export DOCKER_HOST=tcp://192.168.59.103:2375
+
+command -v gpg-agent >/dev/null 2>&1
+if [ $? -eq 0 ] ; then
+  gpg-agent --daemon --enable-ssh-support \
+        --write-env-file "${HOME}/.gpg-agent-info"
+  if [ -f "${HOME}/.gpg-agent-info" ]; then
+     . "${HOME}/.gpg-agent-info"
+    export GPG_AGENT_INFO
+    export SSH_AUTH_SOCK
+    export SSH_AGENT_PID
+  fi
+  
+  GPG_TTY=$(tty)
+  export GPG_TTY
+fi
