@@ -107,3 +107,5 @@
 	smudge = git-media-smudge %f
 [include]
     path = ~/.gitconfig.local
+[fetch]
+	prune = true
