@@ -19,3 +19,4 @@ autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
 " Set ack as the new grep
 set grepprg=ag
 
+set relativenumber
