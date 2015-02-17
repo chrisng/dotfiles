@@ -164,9 +164,9 @@ alias gitlog='git log --all --pretty=format:"%h %cd %s (%an)" --since="7 days ag
 #command -v mvim > /dev/null && alias vi='mvim' || alias vi='vim'
 alias isodate='date -u +%FT%H:%M'
 
-if [ $(uname -s) == "Darwin" ]; then
+if [ "$(uname -s)" = "Darwin" ]; then
   command -v mvim > /dev/null 2>&1
-  if [ $? == 0 ] ; then
+  if [ $? -eq 0 ] ; then
     alias vi='mvim'
   fi
 else
