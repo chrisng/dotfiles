@@ -34,6 +34,8 @@
     sl = stash list
     sa = stash apply
     ss = stash save
+    undo = reset HEAD~1 --mixed
+    amend = commit -a --amend
     user = config user.email
     purr = pull --rebase
     who = !sh -c 'echo \"`git config --global user.name` <`git config --global user.email`>\"'
