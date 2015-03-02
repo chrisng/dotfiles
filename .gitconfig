@@ -111,3 +111,5 @@
     path = ~/.gitconfig.local
 [fetch]
 	prune = true
+[status]
+	submoduleSummary = true
