@@ -42,6 +42,7 @@
     pair = !sh -c 'git config --global user.name $0+$1 && git config --global user.email my_team+$0+$1@chaoselixir.com'
     old-merged-branches = "!for k in $(git branch -r --merged master | grep -v '\\->' | sed s/^..//);do echo $(git log -1 --pretty=format:\"%ci %cr\" \"$k\")\\\\t\"$k\";done | sort"
     pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
+    bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
 
 [apply]
 	# Detect whitespace errors when applying a patch
@@ -60,6 +61,7 @@
 	# Make `git rebase` safer on OS X
 	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
 	trustctime = false
+	editor = vim
 
 [color]
 	# Use colors in Git commands that are capable of colored output when
@@ -81,6 +83,7 @@
 [merge]
 	# Include summaries of merged commits in newly created merge commit messages
 	log = true
+	tool = p4mergetool
 
 # URL shorthands
 [url "git@github.com:"]
@@ -114,4 +117,12 @@
 [status]
 	submoduleSummary = true
 [diff]
-	submodule = log
+    submodule = log
+[pull]
+    rebase = preserve
+[mergetool "p4mergetool"]
+	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge $PWD/$BASE $PWD/$REMOTE $PWD/$LOCAL $PWD/$MERGED
+	trustExitCode = false
+[mergetool]
+	keepBackup = false
+
