@@ -65,7 +65,15 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[
 alias whois="whois -h whois-servers.net"
 
 # Flush Directory Service cache
-alias mflushdns="dscacheutil -flushcache && sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist && sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist"
+osx_ver=$(sw_vers -productVersion | cut -d'.' -f1-2)
+case $osx_ver in
+  "10.09")
+    alias mflushdns="dscacheutil -flushcache && sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist && sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist"
+    ;;
+  "10.10")
+    alias flushdns='sudo discoveryutil mdnsflushcache'
+    ;;
+esac
 
 # Clean up LaunchServices to remove duplicates in the “Open With” menu
 alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
