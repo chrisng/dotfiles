@@ -1,0 +1,23 @@
+#
+# Defines environment variables.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+source ~/.exports
+source ~/.aliases
+source ~/.path
+
+eval `keychain --eval --agents ssh --inherit any ~/.ssh/id_rsa`
+source $HOME/.keychain/$HOST-sh
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+alias rake="noglob rake"
+#plugins=(git bundler osx rake ruby virutalenv virutalenvwrapper rvm)
+
+# Ensure that a non-login, non-interactive shell has a defined environment.
+if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprofile"
+fi
