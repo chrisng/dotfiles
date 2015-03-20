@@ -86,6 +86,12 @@ You could also install native apps with [`brew cask`](https://github.com/phinze/
 ./.cask
 ```
 
+
+#TODO:
+Switch to using a betteer dotfile manager
+Update settings to support zprezto
+
+
 ## Thanks to…
 
 * [Mathias Bynens](https://github.com/mathiasbynens/) for the dotfiles repository this was based on
