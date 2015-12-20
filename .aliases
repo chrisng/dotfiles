@@ -175,10 +175,12 @@ alias isodate='date -u +%FT%H:%M'
 if [ "$(uname -s)" = "Darwin" ]; then
   command -v mvim > /dev/null 2>&1
   if [ $? -eq 0 ] ; then
-    alias vi='mvim'
+    if [ -f /usr/local/bin/mvim ] ; then
+      alias vi='/usr/local/bin/mvim -v'
+    else
+      alias vi=vim
+    fi
   fi
-else
-    alias vi=vim
 fi
 
 alias vdiff='vimdiff -d '
