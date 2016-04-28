@@ -183,6 +183,12 @@ if [ "$(uname -s)" = "Darwin" ]; then
   fi
 fi
 
+if [ "$(uname -s)" = "Darwin" ] && [ -f /usr/local/bin/vim ] ; then
+  alias vim=/usr/local/bin/vim
+  alias vi=vim
+fi
+
+
 alias vdiff='vimdiff -d '
 # ssh with full X support
 alias sshx='ssh -XY'
