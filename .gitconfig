@@ -58,6 +58,11 @@
     unstage = reset HEAD              # remove files from index (tracking)
     uncommit = reset --soft HEAD^     # go back before last commit, with files in uncommitted state
 
+#Extra tips
+# git diff -w or git show -w (remove white line diff)
+#https://csswizardry.com/2017/05/little-things-i-like-to-do-with-git/
+  stats = shortlog -sn --since='10 weeks' --until='2 weeks'
+  diffw = diff --word-diff
 
 [apply]
 	# Detect whitespace errors when applying a patch
