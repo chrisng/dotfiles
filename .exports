@@ -46,10 +46,15 @@ fi
 ##    LDFLAGS:  -L/usr/local/opt/sqlite/lib
 ##    CPPFLAGS: -I/usr/local/opt/sqlite/include
 
-export LDFLAGS='-L/usr/local/opt/sqlite/lib'
-export CPPFLAGS='-I/usr/local/opt/sqlite/include'
+export LDFLAGS='-L/usr/local/opt/sqlite/lib:-L/usr/local/opt/openssl/lib'
+export CPPFLAGS='-I/usr/local/opt/sqlite/include:-I/usr/local/opt/openssl/include'
+export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 
-export GOROOT=$HOME/projects/golang
+if [ -d /usr/local/opt/go/libexec ] ; then
+  export GOROOT=/usr/local/opt/go/libexec
+else
+  export GOROOT=$HOME/projects/golang
+fi
 
 #export DOCKER_HOST=tcp://192.168.59.103:2375
 
@@ -73,3 +78,4 @@ if [ -f ~/.exports.local ] ; then
 fi
 
 export HOMEBREW_NO_ANALYTICS=1
+
