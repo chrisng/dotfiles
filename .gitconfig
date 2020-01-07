@@ -2,6 +2,7 @@
     # View abbreviated SHA, description, and history graph of the latest 20 commits
     l = log --pretty=oneline -n 20 --graph --abbrev-commit
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    lf = log --pretty=full
     s = status -s
     # Show the diff between the latest commit and the current state
     d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
@@ -35,7 +36,6 @@
     sa = stash apply
     ss = stash save
     undo = reset HEAD~1 --mixed
-    amend = commit -a --amend
     user = config user.email
     purr = pull --rebase
     who = !sh -c 'echo \"`git config --global user.name` <`git config --global user.email`>\"'
@@ -43,6 +43,26 @@
     old-merged-branches = "!for k in $(git branch -r --merged master | grep -v '\\->' | sed s/^..//);do echo $(git log -1 --pretty=format:\"%ci %cr\" \"$k\")\\\\t\"$k\";done | sort"
     pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
     bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
+    leader = shortlog -sn --all --no-merges
+     # via http://blog.apiaxle.com/post/handy-git-tips-to-stop-you-getting-fired/
+    snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
+    snapshots = !git stash list --grep snapshot
+
+    #via http://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit
+    recent-branches = !git for-each-ref --count=15 --sort=-committerdate refs/heads/ --format='%(refname:short)'
+    amend = commit --amend            # ammend your last commit
+    ammend = commit --amend           # ammend your last commit
+    # diff
+    dc = diff --cached                # diff staged changes
+    last = diff HEAD^                 # diff last committed changea
+    unstage = reset HEAD              # remove files from index (tracking)
+    uncommit = reset --soft HEAD^     # go back before last commit, with files in uncommitted state
+
+#Extra tips
+# git diff -w or git show -w (remove white line diff)
+#https://csswizardry.com/2017/05/little-things-i-like-to-do-with-git/
+  stats = shortlog -sn --since='10 weeks' --until='2 weeks'
+  diffw = diff --word-diff
 
 [apply]
 	# Detect whitespace errors when applying a patch
