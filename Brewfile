@@ -62,6 +62,8 @@ install ansible
 install boot2docker
 install sshrc
 install pv
+install yq
+install testssl
 
 tap homebrew/versions
 #install lua52
