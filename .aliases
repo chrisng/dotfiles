@@ -207,5 +207,3 @@ alias ag='ag -Uut --ignore-dir Applications --ignore-dir Dropbox --ignore-dir Li
 
 alias ln='ln -v'
 
-alias cdl3='cd ~/projects/l3/;git config --global user.email chrisn@loyal3.com'
-alias cdchaos='cd ~/projects/chaoselixir/;git config --global user.email chaoselixir@gmail.com'
