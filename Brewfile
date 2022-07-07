@@ -64,6 +64,7 @@ install sshrc
 install pv
 install yq
 install testssl
+install appcleaner
 
 tap homebrew/versions
 #install lua52
