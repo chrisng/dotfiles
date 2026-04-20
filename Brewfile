@@ -63,6 +63,7 @@ install boot2docker
 install sshrc
 install pv
 install yq
+install jq
 install testssl
 install appcleaner
 
